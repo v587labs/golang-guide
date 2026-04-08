@@ -18,6 +18,7 @@ This repository contains interview materials for the following technologies:
 - **TCP/IP**: Network protocols, connection management, HTTP/HTTPS, socket programming
 - **PostgreSQL**: Database design, SQL queries, indexing, performance optimization
 - **Redis**: Caching strategies, data structures, persistence, clustering
+- **Blockchain**: Distributed ledger technology, consensus algorithms, smart contracts, cryptocurrency platforms (Bitcoin, Ethereum), security and cryptography
 
 ## How to Use
 
@@ -27,8 +28,9 @@ When invoked, this skill will:
 
 1. Search the repository for relevant interview materials based on the specified technology stack
 2. Analyze existing content to generate comprehensive interview questions
-3. Format questions in a structured Q&A format
-4. Provide detailed answers based on repository content
+3. **Format questions in concise mode by default** (question + one-sentence answer)
+4. Save generated questions to a markdown file named `题库内容总结-YYYY-MM-DD.md`
+5. If detailed mode is requested, provide comprehensive answers with related topics and key points
 
 ### Invocation Scenarios
 
@@ -40,6 +42,10 @@ Invoke this skill when:
 - User asks "help me prepare for a technical interview"
 - User wants to know "common [technology] interview questions"
 - User asks for "Redis questions for interview"
+- User asks for "blockchain interview questions"
+- User wants to prepare for "cryptocurrency or blockchain developer interviews"
+- User asks about "smart contract questions" or "Ethereum interview preparation"
+- User needs "consensus algorithm interview questions"
 
 ### Question Generation Process
 
@@ -48,6 +54,7 @@ Invoke this skill when:
    - k8s/ for Kubernetes questions
    - Redis/面经/ for Redis questions
    - mysql/ for database questions
+   - 区块链/区块链面经/ for blockchain questions
    - Related markdown files containing technical content
 
 2. **Analysis Phase**: Read and analyze the content to understand:
@@ -65,7 +72,17 @@ Invoke this skill when:
 
 ### Question Format
 
-Generated interview questions follow this structure:
+Generated interview questions follow this structure by default in **concise mode**:
+
+```markdown
+## [Topic/Concept]
+
+**题目**: [Clear, concise question]
+
+**答案**: [One-sentence answer]
+```
+
+For detailed mode (when explicitly requested), use the full format:
 
 ```markdown
 ## Question: [Topic/Concept]
@@ -129,6 +146,64 @@ The skill will:
    - Docker & K8s (deployment)
    - TCP/IP (networking)
 
+### Example 4: Blockchain Questions
+
+User: "Help me prepare for blockchain developer interview"
+
+The skill will:
+1. Search 区块链/区块链面经/ directory for blockchain content
+2. Find README.md with blockchain concepts and interview questions
+3. Generate questions about:
+   - Blockchain fundamentals and architecture
+   - Consensus algorithms (PoW, PoS, DPoS)
+   - Smart contracts and Ethereum
+   - Cryptocurrency and mining
+   - Security and cryptography
+   - Public vs Private blockchains
+   - Distributed ledger technology
+
+## Output File Specification
+
+After generating interview questions, the skill will automatically create a markdown file with the following naming convention:
+
+**Filename Format**: `题库内容总结-YYYY-MM-DD.md`
+
+Where:
+- `YYYY` = 4-digit year
+- `MM` = 2-digit month (01-12)
+- `DD` = 2-digit day (01-31)
+
+Example: `题库内容总结-2026-04-08.md`
+
+**Output Location**: The file will be saved in the same directory where the skill is invoked or in a designated output directory.
+
+**File Content Structure**:
+```markdown
+# [Technology] Interview Questions
+
+Generated on: YYYY-MM-DD
+
+Total Questions: N
+
+---
+
+## [Topic 1]
+
+**题目**: [Question 1]
+
+**答案**: [One-sentence answer]
+
+---
+
+## [Topic 2]
+
+**题目**: [Question 2]
+
+**答案**: [One-sentence answer]
+
+... (more questions)
+```
+
 ## Best Practices
 
 ### For Interviewers
@@ -168,6 +243,10 @@ mysql/
 
 elasticsearch/
   └── 面经/ES_INTERVIEW_README.md
+
+区块链/
+  └── 区块链面经/
+      └── README.md                   # Blockchain interview questions
 ```
 
 ## Tips for Effective Use
@@ -177,6 +256,9 @@ elasticsearch/
 3. **Focus on Weak Areas**: Ask for questions on topics you find challenging
 4. **Cross-Reference**: Use related questions to build comprehensive understanding
 5. **Practice Answers**: Don't just read questions, practice answering them out loud
+6. **Concise Mode**: Questions are generated in concise format by default (question + one-sentence answer) for quick review
+7. **Detailed Mode**: Ask for "detailed" or "comprehensive" mode if you need full explanations with related topics and key points
+8. **Output Files**: All generated questions are automatically saved to `题库内容总结-YYYY-MM-DD.md` files for easy reference
 
 ## Integration with Code
 
