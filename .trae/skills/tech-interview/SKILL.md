@@ -29,7 +29,7 @@ When invoked, this skill will:
 1. Search the repository for relevant interview materials based on the specified technology stack
 2. Analyze existing content to generate comprehensive interview questions
 3. **Format questions in concise mode by default** (question + one-sentence answer)
-4. Save generated questions to a markdown file named `题库内容总结-YYYY-MM-DD.md`
+4. Save generated questions to a markdown file named `{题库内容总结}-YYYY-MM-DD.md`
 5. If detailed mode is requested, provide comprehensive answers with related topics and key points
 
 ### Invocation Scenarios
@@ -166,14 +166,15 @@ The skill will:
 
 After generating interview questions, the skill will automatically create a markdown file with the following naming convention:
 
-**Filename Format**: `题库内容总结-YYYY-MM-DD.md`
+**Filename Format**: `{题库内容总结}-YYYY-MM-DD.md`
 
 Where:
+- `{题库内容总结}` = Variable placeholder replaced with actual content summary (e.g., "Go并发编程", "区块链基础", "Redis缓存策略")
 - `YYYY` = 4-digit year
 - `MM` = 2-digit month (01-12)
 - `DD` = 2-digit day (01-31)
 
-Example: `题库内容总结-2026-04-08.md`
+Example: `Go并发编程-2026-04-08.md`, `区块链共识算法-2026-04-08.md`
 
 **Output Location**: The file will be saved in the same directory where the skill is invoked or in a designated output directory.
 
@@ -258,7 +259,7 @@ elasticsearch/
 5. **Practice Answers**: Don't just read questions, practice answering them out loud
 6. **Concise Mode**: Questions are generated in concise format by default (question + one-sentence answer) for quick review
 7. **Detailed Mode**: Ask for "detailed" or "comprehensive" mode if you need full explanations with related topics and key points
-8. **Output Files**: All generated questions are automatically saved to `题库内容总结-YYYY-MM-DD.md` files for easy reference
+8. **Output Files**: All generated questions are automatically saved to `{题库内容总结}-YYYY-MM-DD.md` files (e.g., `Go并发编程-2026-04-08.md`) for easy reference
 
 ## Integration with Code
 
